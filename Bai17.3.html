@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 1 - Bai 17: id=15532</title>
+</head>
+<body>
+<script>
+    class Apple {
+        weight;
+
+        constructor(weight) {
+            this.weight = weight;
+        }
+    }
+
+    class Human {
+        name;
+        gender;
+        weight;
+
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = Boolean(gender);
+            this.weight = Number(weight);
+        }
+
+        isMale() {
+            return this.gender;
+        }
+
+        talk(text) {
+            document.write("<br>" + this.name + ": " + text)
+        }
+
+        eat(apple) {
+            if (apple.weight > 0) {
+                apple.weight -= 1;
+                this.weight += 1;
+            }
+        }
+
+        check(apple) {
+            document.write("<br>" + this.name + ": This apple weighs " + apple.weight);
+        }
+
+        getName(human) {
+            return human.name;
+        }
+
+        getGender(human) {
+            return human.gender;
+        }
+
+        getWeight(human) {
+            return human.weight;
+        }
+
+
+    }
+
+    let apple = new Apple(15);
+    let adam = new Human("Adam", true, 70);
+    let eva = new Human("Eva", false, 50);
+
+    adam.talk("Let's eat that apple, Eva");
+    eva.talk("Good idea, Adam");
+
+    while (apple.weight > 0) {
+        adam.eat(apple);
+        eva.eat(apple);
+    }
+    adam.talk("It's delicious, I weigh "+ adam.weight+ " now");
+    eva.talk("Yes it is. My weight has increased by " + (eva.weight - 50));
+</script>
+</body>
+</html>
