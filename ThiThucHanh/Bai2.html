@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<script>
+    let array = [1,2,3,4,5];
+    let x = 7;
+    let index = 5;
+    function insertNumberToArray(arr, number, idx) {
+        if ((idx < 0) || (idx > arr.length)) return arr;
+        for (let i = arr.length; i > idx ; i--) {
+            arr[i] = arr[i-1];
+        }
+        arr[idx] = number;
+        return arr;
+    }
+    document.write(insertNumberToArray(array, x, index));
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    let x = 10;
+    function sumOfListPrime(number) {
+        let sum = 0;
+        for (let i = 2; i <= number; i++) {
+            let isPrime = true;
+            for (let j = 2; j < i-1; j++) {
+                if (i % j === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                console.log(i);
+                sum += i;
+            }
+        }
+        return sum;
+    }
+    document.write(sumOfListPrime(x));
+</script>
+</body>
+</html>
